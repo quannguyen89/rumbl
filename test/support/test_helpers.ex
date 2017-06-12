@@ -6,7 +6,7 @@ defmodule Rumbl.TestHelpers do
             name: "Some User",
             username: "user#{Base.encode16(:crypto.rand_bytes(8))}",
             password: "supersecret"
-            })
+            }, attrs)
         %Rumbl.User{}
         |> Rumbl.User.registration_changeset(changes)
         |> Repo.insert!()
