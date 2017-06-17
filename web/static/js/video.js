@@ -39,7 +39,7 @@ let Video = {
         });
         vidChannel.join()
             .receive("ok", ({annotations}) => {
-                let ids = resp.annotations.map(ann => ann.id)
+                let ids = annotations.map(ann => ann.id)
                 if (ids.length > 0) { vidChannel.params.last_seen_id = Math.max(...ids)}
                 this.scheduleMessages(msgContainer, annotations);
             })
